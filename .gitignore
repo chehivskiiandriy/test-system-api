@@ -1,0 +1,23 @@
+#env
+.env
+
+# dependencies
+/node_modules
+
+# IDE
+/.idea
+/.vscode
+
+# misc
+npm-debug.log
+
+# build
+/build
+
+# tests
+/coverage
+/.nyc_output
+
+#Package
+package-lock.json
+yarn.lock
