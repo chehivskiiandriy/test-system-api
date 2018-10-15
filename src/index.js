@@ -3,10 +3,9 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
+
 import models from './db/models';
-import user from './routes/user';
-import group from './routes/group';
-import groupUser from './routes/groupUser';
+import { user, group, groupUser, topic } from './routes';
 
 dotenv.config();
 
@@ -20,10 +19,10 @@ app.use(cors({
   origin: 'http://localhost:8081'
 }));
 
-
 app.use('/api/user', user);
 app.use('/api/group', group);
 app.use('/api/group-user', groupUser)
+app.use('/api/topic', topic)
 
 models.sequelize.sync().then(() => {
   console.log('sequelize');
